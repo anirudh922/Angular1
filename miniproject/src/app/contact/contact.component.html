@@ -1,0 +1,29 @@
+<form>
+   
+    Enter the Name:<input type="text" id="cname" name="cusname" [(ngModel)] = "getConinfo.cname"><br><br>
+    Enter the Phone:<input type="string" id="cphone" name="cusphone" [(ngModel)] = "getConinfo.phoneno"><br><br>
+    <button class="btn btn-primary" (click)="addContact()">Add</button> &nbsp;&nbsp;
+</form>
+
+<h1 style="color:red;font-size:30px;">{{msg}}</h1>
+<hr>
+    <input type="text" placeholder="Search..">
+<h1>Employee Info</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone No</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let c of Con; let i = index">
+            <tr>
+                <td>{{c.cname}}</td>
+                <td>{{c.phoneno}}</td>
+                <td><button (click)="deleteContact(c.cname)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

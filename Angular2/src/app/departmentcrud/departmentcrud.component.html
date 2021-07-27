@@ -1,0 +1,36 @@
+<p>Department Application</p>
+
+<form>
+    <form>
+        Enter the did: <input type="number" id="did" name="empid" [(ngModel)] = "getdepinfo.did"><br><br>
+        Enter the dname: <input type="text" id="dname" name="empname" [(ngModel)] = "getdepinfo.dname"><br><br>
+        Enter Location:  <input type="text" id="dloc" name="dlocation" [(ngModel)]="getdepinfo.dloc"><br><br>
+        <button class="btn btn-primary" (click)="addDepartment()">Add</button> &nbsp;&nbsp;
+        <button class="btn btn-primary" (click)="updateDepartment()">update</button>
+    </form>
+    <h1 style="color:red;font-size:30px;">{{msg}}</h1>
+<hr>
+<h1>Department Info</h1>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Department ID</th>
+                <th>Department Name</th>
+                <th>Department Location</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let d of dept; let i = index">
+            <tr>
+                <td>{{d.did}}</td>
+                <td>{{d.dname}}</td>
+                <td>{{d.dloc}}</td>
+                <td><button (click)="deleteDepartment(d.did)">Delete</button></td>
+                <td><button (click)="EditDepartment(d.did)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+</form>
